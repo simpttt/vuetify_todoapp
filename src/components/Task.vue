@@ -15,8 +15,8 @@
         <v-card width="300px" height="150px" class="mx-1 my-1">
           <v-card-title>{{ task.title }}</v-card-title>
           <v-card-text> {{ task.due }} {{ task.status }} </v-card-text>
-          <v-btn @click="editTask(index)">edit</v-btn>
-          <v-btn @click="deleteTask(index)">×</v-btn>
+          <v-btn class="mx-4" x-small @click="editTask(index)">edit</v-btn>
+          <v-btn x-small @click="deleteTask(index)">×</v-btn>
         </v-card>
       </v-list-item>
     </v-flex>
@@ -30,15 +30,15 @@ export default {
       newTask: {
         title: "",
         due: "",
-        status: "",
+        status: ""
       },
       tasks: [
         {
           title: "aaa",
           due: "dd",
-          status: "未了",
-        },
-      ],
+          status: "未了"
+        }
+      ]
     };
   },
   watch: {
@@ -46,8 +46,8 @@ export default {
       handler: function() {
         localStorage.setItem("tasks", JSON.stringify(this.tasks));
       },
-      deep: true,
-    },
+      deep: true
+    }
   },
   mounted: function() {
     this.tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -65,8 +65,8 @@ export default {
       if (confirm("are you sure?")) {
         this.tasks.splice(index, 1);
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

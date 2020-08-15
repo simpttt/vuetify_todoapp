@@ -33,7 +33,7 @@ export default {
   components: {
     Board
   },
-  data () {
+  data() {
     return {
       drawer: false
     };
