@@ -4,9 +4,7 @@
       <v-container>
         <v-list-item>
           <v-list-item-content>
-            <v-list-item-title class="title">
-              Navigation list
-            </v-list-item-title>
+            <v-list-item-title class="title">Navigation list</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-divider></v-divider>
@@ -17,16 +15,14 @@
       <v-toolbar-title>Todoapp</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn text style="text-transform: none">Login</v-btn>
+        <v-btn text to="/login" style="text-transform: none">Login</v-btn>
         <v-btn text style="text-transform: none">Help</v-btn>
       </v-toolbar-items>
     </v-app-bar>
     <v-content class="my-3">
       <Board></Board>
     </v-content>
-    <v-footer color="green" dark app>
-      simp_t
-    </v-footer>
+    <v-footer color="green" dark app>simp_t</v-footer>
   </v-app>
 </template>
 
@@ -37,7 +33,7 @@ export default {
   components: {
     Board
   },
-  data() {
+  data () {
     return {
       drawer: false
     };
