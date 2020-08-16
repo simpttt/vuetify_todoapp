@@ -14,7 +14,7 @@
       <v-list-item v-for="(task, index) in tasks" :key="index">
         <v-card width="300px" height="150px" class="mx-1 my-1">
           <v-card-title>{{ task.title }}</v-card-title>
-          <v-card-text> {{ task.due }} {{ task.status }} </v-card-text>
+          <v-card-text>{{ task.due }} {{ task.status }}</v-card-text>
           <v-btn class="mx-4" x-small @click="editTask(index)">edit</v-btn>
           <v-btn x-small @click="deleteTask(index)">×</v-btn>
         </v-card>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
       newTask: {
         title: "",
@@ -43,25 +43,25 @@ export default {
   },
   watch: {
     tasks: {
-      handler: function() {
+      handler: function () {
         localStorage.setItem("tasks", JSON.stringify(this.tasks));
       },
       deep: true
     }
   },
-  mounted: function() {
+  mounted: function () {
     this.tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   },
   methods: {
-    addTask() {
+    addTask () {
       this.newTask.status = "未了";
       this.tasks.push(this.newTask);
       this.newTask = {};
     },
-    editTask(index) {
+    editTask (index) {
       index;
     },
-    deleteTask(index) {
+    deleteTask (index) {
       if (confirm("are you sure?")) {
         this.tasks.splice(index, 1);
       }
@@ -69,37 +69,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.tasklist {
-  background-color: white;
-  color: rgb(104, 98, 98);
-  list-style: none;
-}
-
-.input-todo {
-  height: 50px;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
-.input-button {
-  height: 50px;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-.edit_delete {
-  cursor: pointer;
-  float: right;
-  width: 50px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.edit:hover {
-  opacity: 0.8;
-}
-.delete:hover {
-  opacity: 0.8;
-}
-</style>

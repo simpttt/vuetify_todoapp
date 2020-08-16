@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import Task from './Task.vue'
+import Task from "./Salegraph.vue";
 export default {
-  name: 'Board',
+  name: "Board",
   components: {
     Task
   }

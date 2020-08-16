@@ -19,23 +19,19 @@
         <v-btn text style="text-transform: none">Help</v-btn>
       </v-toolbar-items>
     </v-app-bar>
-    <v-content class="my-3">
-      <Board></Board>
-    </v-content>
+    <v-main>
+      <router-view />
+    </v-main>
     <v-footer color="green" dark app>simp_t</v-footer>
   </v-app>
 </template>
 
 <script>
-import Board from "./components/Board.vue";
 export default {
   name: "App",
-  components: {
-    Board
-  },
   data() {
     return {
-      drawer: false
+      drawer: true
     };
   }
 };
